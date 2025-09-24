@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>مكتب أسامة حمزة للمحاماة</title>
+  <meta name="description" content="مكتب أسامة حمزة - محاماة دولية وجنائية. خبرة تمتد عبر أجيال. احجز استشارة الآن.">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy: #0b2545;
+      --gold: #c9a96e;
+      --gold-light: #e8d5a6;
+      --soft: #f8fafc;
+      --muted: #64748b;
+      --accent: #1e40af;
+      --white: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --gradient-primary: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 100%);
+      --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.8) 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: var(--navy);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Smooth scrolling enhancement */
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      * {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+
+    /* Background decorative elements */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(201, 169, 110, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(11, 37, 69, 0.1) 0%, transparent 50%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+
+    /* Enhanced Header */
+    header {
+      background: var(--gradient-primary);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(11, 37, 69, 0.3);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    header:hover {
+      box-shadow: 0 12px 40px rgba(11, 37, 69, 0.4);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      background: var(--gradient-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: var(--navy);
+      font-size: 20px;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+      transform: rotate(45deg) translate(-100%, -100%);
+      transition: transform 0.6s ease;
+    }
+
+    .logo:hover::before {
+      transform: rotate(45deg) translate(100%, 100%);
+    }
+
+    .logo:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+      animation: slideInDown 0.8s ease-out 0.2s both;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.4s ease;
+    }
+
+    nav a:hover::before {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .cta-btn {
+      background: var(--gradient-gold);
+      color: var(--navy);
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      animation: slideInLeft 0.8s ease-out 0.4s both;
+    }
+
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .cta-btn:hover::before {
+      left: 100%;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Enhanced Hero Section */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(201, 169, 110, 0.1) 0%, transparent 70%);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(3deg); }
+    }
+
+    .hero .intro {
+      animation: slideInUp 1s ease-out 0.6s both;
+    }
+
+    .hero .intro h1 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .intro p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      background: var(--gradient-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 20px 24px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .stat:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .stat h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .stat div:last-child {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .hero-portrait {
+      background: var(--gradient-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      animation: slideInLeft 1s ease-out 0.8s both;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-portrait::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(201, 169, 110, 0.1), transparent);
+      animation: rotate 10s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .portrait-img {
+      width: 100%;
+      height: 480px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #e2e8f0, #f1f5f9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Enhanced Sections */
+    section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 800;
+      margin-bottom: 24px;
+      color: var(--navy);
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-gold);
+      border-radius: 2px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    /* Enhanced Timeline */
+    .timeline {
+      background: var(--gradient-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-gold);
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 24px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 0;
+    }
+
+    .timeline-item:hover {
+      background: rgba(248, 250, 252, 0.5);
+      border-radius: 12px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .year {
+      min-width: 100px;
+      font-weight: 800;
+      color: var(--gold);
+      font-size: 18px;
+      position: relative;
+    }
+
+    .year::after {
+      content: '';
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    /* Enhanced Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--gradient-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gradient-gold);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card h3 {
+      margin-bottom: 16px;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    /* Enhanced Counters */
+    .counters {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .counter {
+      text-align: center;
+      padding: 32px 24px;
+      border-radius: 20px;
+      background: var(--gradient-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .counter::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(201, 169, 110, 0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(0.8) rotate(0deg); opacity: 0.5; }
+      50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+    }
+
+    .counter:hover {
+      transform: translateY(-8px) scale(1.05);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .counter .num {
+      font-size: 48px;
+      color: var(--navy);
+      font-weight: 900;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Enhanced Team Section */
+    .member {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      background: var(--gradient-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* Enhanced Forms and Buttons */
+    input, textarea, select {
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 2px solid rgba(226, 232, 240, 0.8);
+      margin-top: 8px;
+      font-family: inherit;
+      font-size: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201, 169, 110, 0.1);
+      background: var(--white);
+    }
+
+    .btn {
+      background: var(--gradient-primary);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 12px;
+      border: 0;
+      font-weight: 700;
+      font-family: inherit;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* WhatsApp Enhancement */
+    .whatsapp {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      z-index: 2000;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+      animation: none;
+    }
+
+    /* Enhanced Footer */
+    footer {
+      background: var(--gradient-primary);
+      color: rgba(255, 255, 255, 0.9);
+      padding: 48px 0;
+      margin-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gradient-gold);
+    }
+
+    /* Animations */
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Scroll animations */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Enhanced Modal */
+    #bookingModal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(11, 37, 69, 0.8);
+      backdrop-filter: blur(20px);
+      z-index: 3000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #bookingModal > div {
+      width: 480px;
+      max-width: 90vw;
+      background: var(--gradient-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      animation: slideInUp 0.4s ease;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .counters {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Focus styles */
+    *:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    /* High contrast support */
+    @media (prefers-contrast: high) {
+      :root {
+        --card-bg: rgba(255, 255, 255, 1);
+        --soft: #ffffff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">أح</div>
+        <div>
+          <div style="font-weight:700; font-size: 18px;">مكتب أسامة حمزة</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.8)">محاماة دولية وجنائية</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">الخدمات</a></li>
+          <li><a href="#cases">الإنجازات</a></li>
+          <li><a href="#faq">الأسئلة</a></li>
+          <li><a href="#contact">تواصل</a></li>
+        </ul>
+      </nav>
+      <div>
+        <a class="cta-btn" href="#contact">احجز استشارة</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div class="intro">
+        <h1>مكتب أسامة حمزة — خبرة قانونية تمتد عبر أجيال</h1>
+        <p class="lead">نقدم استشارات قانونية دولية وقضايا جنائية للأفراد والشركات. حماية قانونية مبنية على تاريخ ومصداقية.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <h3>سنة التأسيس</h3>
+            <div>1972</div>
+          </div>
+          <div class="stat">
+            <h3>الفروع</h3>
+            <div>3 فروع</div>
+          </div>
+          <div class="stat">
+            <h3>الموظفين</h3>
+            <div id="staff-count">28</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a class="cta-btn" href="#contact">احجز استشارة</a>
+          <a class="btn" style="background:transparent;color:var(--navy);border:2px solid var(--navy);padding:14px 24px;">شاهد ملفنا التعريفي</a>
+        </div>
+      </div>
+
+      <div class="hero-portrait">
+        <div class="portrait-img">صورة الدكتور أسامة حمزة</div>
+      </div>
+    </section>
+
+    <section id="about" class="scroll-reveal">
+      <h2>عن المكتب وتاريخه</h2>
+      <p class="lead">مؤسسة عائلية بدأت مع الجد المؤسس وانتقلت عبر الأجيال حتى وصلت لقيادة الدكتور أسامة حمزة. نُقدّر التاريخ ونبني للمستقبل.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="year">1972</div>
+          <div>
+            <strong style="font-size: 18px;">الجد المؤسس</strong>
+            <div class="muted">تأسيس المكتب ووضع قواعد المصداقية والشرف المهني.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">1998</div>
+          <div>
+            <strong style="font-size: 18px;">الجيل الثاني</strong>
+            <div class="muted">توسيع نطاق العمل ليشمل قضايا تجارية وإدارية.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">2010</div>
+          <div>
+            <strong style="font-size: 18px;">الدكتور أسامة حمزة</strong>
+            <div class="muted">قيادة المكتب نحو القضايا الدولية والتحكيم والدفاع الجنائي للمؤسسات والأفراد.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="scroll-reveal">
+      <h2>خدماتنا</h2>
+      <p class="lead">نغطي مجموعة واسعة من الخدمات القانونية للأفراد والشركات.</p>
+      <div class="grid" style="margin-bottom: 48px;">
+        <div class="card">
+          <h3>دفاع جنائي للأفراد</h3>
+          <p class="muted">تمثيل المتهمين أمام المحاكم بكافة مراحل الدعوى الجنائية.</p>
+        </div>
+        <div class="card">
+          <h3>استشارات دولية للشركات</h3>
+          <p class="muted">عقود عبر الحدود، نزاعات تجارية دولية، وضمان التزام تنظيمي.</p>
+        </div>
+        <div class="card">
+          <h3>التحكيم الدولي</h3>
+          <p class="muted">تمثيل الشركات في هيئة التحكيم الدولي وتسوية النزاعات خارج المحاكم.</p>
+        </div>
+        <div class="card">
+          <h3>صياغة ومراجعة العقود</h3>
+          <p class="muted">صياغة عقود تجارية، اتفاقيات استثمار، واتفاقيات شريك.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases" class="scroll-reveal">
+      <h2>الإنجازات وأشهر القضايا</h2>
+      <p class="lead">عملنا في قضايا معقدة عبر الحدود ومع شركات وطنية وعالمية. نعرض أمثلة مختصرة دون الإفصاح عن أسرار موكلين.</p>
+      <div class="counters">
+        <div class="counter">
+          <div class="num" data-target="842">0</div>
+          <div class="muted" style="font-weight: 600; color: var(--navy);">قضايا ناجحة</div>
+        </div>
+        <div class="counter">
+          <div class="num" data-target="152">0</div>
+          <div class="muted" style="font-weight: 600; color: var(--navy);">قضايا دولية</div>
+        </div>
+        <div class="counter">
+          <div class="num" data-target="72">0</div>
+          <div class="muted" style="font-weight: 600; color: var(--navy);">شركات موكلة</div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>قضية ش.م.م ضد جهة دولية</h3>
+          <p class="muted">نجح المكتب في حماية مصالح أحد عملائنا في نزاع تجاري عبر محكمة تحكيم.</p>
+        </div>
+        <div class="card">
+          <h3>قضية جنائية دفاعية</h3>
+          <p class="muted">دفاع ناجح أدى إلى تبرئة موكل في قضية حساسة.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="scroll-reveal">
+      <h2>فريق العمل والفروع</h2>
+      <p class="lead">فريق متمرس يضم محامين ومستشارين قانونيين وإداريين.</p>
+      <div class="grid" style="margin-bottom: 48px;">
+        <div class="card member">
+          <div class="avatar">أس</div>
+          <div>
+            <strong style="font-size: 18px;">د. أسامة حمزة</strong>
+            <div class="muted">رئيس المكتب — محامٍ دولي وجنائي</div>
+          </div>
+        </div>
+        <div class="card member">
+          <div class="avatar">م.ن</div>
+          <div>
+            <strong style="font-size: 18px;">م. نادر</strong>
+            <div class="muted">محامي أول — التحكيم الدولي</div>
+          </div>
+        </div>
+        <div class="card member">
+          <div class="avatar">س.ع</div>
+          <div>
+            <strong style="font-size: 18px;">سارة علي</strong>
+            <div class="muted">مستشارة قانونية — الشركات</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <strong style="font-size: 20px; color: var(--navy);">فروع المكتب</strong>
+        <div class="muted" style="font-size: 16px; margin-top: 12px;">القاهرة — دبي — لندن</div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="scroll-reveal">
+      <h2>آراء العملاء</h2>
+      <div class="testimonials card" style="margin-bottom: 48px;">
+        <div class="test-slide active">
+          <p class="test-quote" style="font-size: 18px; font-style: italic; color: var(--muted); margin-bottom: 16px;">"تابعنا المكتب معنا خطوة بخطوة ووفروا حلًا سريعًا واحترافيًا"</p>
+          <div class="muted">— عميل، شركة صناعية</div>
+        </div>
+        <div class="test-slide">
+          <p class="test-quote" style="font-size: 18px; font-style: italic; color: var(--muted); margin-bottom: 16px;">"تعامل راقٍ وخبرة واضحة في القضايا الدولية"</p>
+          <div class="muted">— عميلة خاصة</div>
+        </div>
+        <div style="margin-top:24px;display:flex;gap:12px">
+          <button class="btn" id="prevTest" style="flex: 1;">السابق</button>
+          <button class="btn" id="nextTest" style="flex: 1;">التالي</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="scroll-reveal">
+      <h2>الأسئلة الشائعة</h2>
+      <div class="faq-item" style="background: var(--gradient-card); border: 1px solid rgba(255, 255, 255, 0.3); padding: 20px; border-radius: 16px; margin-bottom: 16px; cursor: pointer; transition: all 0.3s ease;">
+        <h4 style="margin: 0; display: flex; justify-content: space-between; align-items: center; font-size: 18px;">ما هي خطوات حجز استشارة؟ <span style="font-size: 24px; font-weight: 300;">+</span></h4>
+        <p style="margin-top: 16px; color: var(--muted); display: none; line-height: 1.7;">يمكنك الحجز عبر نموذج التواصل في صفحة الاتصال أو الضغط على زر احجز استشارة للتواصل عبر واتساب.</p>
+      </div>
+      <div class="faq-item" style="background: var(--gradient-card); border: 1px solid rgba(255, 255, 255, 0.3); padding: 20px; border-radius: 16px; margin-bottom: 16px; cursor: pointer; transition: all 0.3s ease;">
+        <h4 style="margin: 0; display: flex; justify-content: space-between; align-items: center; font-size: 18px;">هل الاستشارة الأولى مدفوعة؟ <span style="font-size: 24px; font-weight: 300;">+</span></h4>
+        <p style="margin-top: 16px; color: var(--muted); display: none; line-height: 1.7;">تختلف حسب نوع القضية؛ نوضح سياسة الرسوم أثناء الحجز.</p>
+      </div>
+      <div class="faq-item" style="background: var(--gradient-card); border: 1px solid rgba(255, 255, 255, 0.3); padding: 20px; border-radius: 16px; margin-bottom: 16px; cursor: pointer; transition: all 0.3s ease;">
+        <h4 style="margin: 0; display: flex; justify-content: space-between; align-items: center; font-size: 18px;">هل تتعاملون مع قضايا خارج مصر؟ <span style="font-size: 24px; font-weight: 300;">+</span></h4>
+        <p style="margin-top: 16px; color: var(--muted); display: none; line-height: 1.7;">نعم، لدينا خبرة وتمثيل دولي وفروع في دبي ولندن.</p>
+      </div>
+    </section>
+
+    <section id="blog" class="scroll-reveal">
+      <h2>مقالات قانونية</h2>
+      <p class="lead">مقالات قصيرة لتوضيح حقوقك وإجراءات القضايا.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>ما هو التحكيم الدولي؟</h3>
+          <p class="muted">مقال يشرح ماهية التحكيم ومتى يفضل استخدامه.</p>
+        </div>
+        <div class="card">
+          <h3>حقوق المتهم في القانون</h3>
+          <p class="muted">شرح مبسط لحقوق المتهم وآليات الدفاع.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="scroll-reveal">
+      <h2>تواصل معنا</h2>
+      <p class="lead">أرسل لنا التفاصيل وسنعاود الاتصال بك لتحديد موعد استشارة.</p>
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px;">
+        <div class="card">
+          <form id="contactForm">
+            <label style="font-weight: 600; color: var(--navy); margin-bottom: 8px; display: block;">الاسم</label>
+            <input type="text" id="name" required>
+            <label style="font-weight: 600; color: var(--navy); margin-bottom: 8px; display: block; margin-top: 20px;">البريد الإلكتروني</label>
+            <input type="email" id="email" required>
+            <label style="font-weight: 600; color: var(--navy); margin-bottom: 8px; display: block; margin-top: 20px;">نوع القضية</label>
+            <select id="caseType" style="cursor: pointer;">
+              <option>دعم جنائي</option>
+              <option>قضايا دولية للشركات</option>
+              <option>تحكيم</option>
+            </select>
+            <label style="font-weight: 600; color: var(--navy); margin-bottom: 8px; display: block; margin-top: 20px;">رسالة</label>
+            <textarea id="message" rows="5" style="resize: vertical;"></textarea>
+            <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+              <button class="btn" type="submit" style="flex: 1; min-width: 120px;">إرسال</button>
+              <button type="button" class="btn" style="background: var(--gradient-gold); color: var(--navy); flex: 1; min-width: 120px;" id="bookBtn">احجز استشارة</button>
+            </div>
+          </form>
+        </div>
+        <div class="card">
+          <strong style="font-size: 20px; color: var(--navy); margin-bottom: 16px; display: block;">فرع القاهرة</strong>
+          <div class="muted" style="margin-bottom: 20px; line-height: 1.6;">العنوان: شارع النيل، القاهرة</div>
+          <div style="margin-bottom: 20px;">
+            <strong style="color: var(--navy);">واتساب</strong>
+            <div class="muted">+20 10 1234 5678</div>
+          </div>
+          <div>
+            <strong style="color: var(--navy);">ساعات العمل</strong>
+            <div class="muted">الاثنين - الجمعة: 9:00 - 18:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/201012345678" target="_blank" aria-label="WhatsApp">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.52 3.48A11.9 11.9 0 0 0 12.02.5C6.07.5 1.5 5.07 1.5 11.02c0 1.94.5 3.83 1.45 5.5L.5 23.5l6.2-1.6a11.42 11.42 0 0 0 5.32 1.25h.01c5.96 0 10.54-4.57 10.54-10.52 0-2.81-1.08-5.44-3.04-7.15z" fill="#fff"/>
+    </svg>
+  </a>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
+        <div>
+          <div style="font-weight:700; font-size: 20px; margin-bottom: 8px;">مكتب أسامة حمزة</div>
+          <div class="muted">محاماة دولية وجنائية — خبرة تمتد عبر أجيال</div>
+        </div>
+        <div style="text-align:right">
+          <div style="margin-bottom: 8px;">العنوان: شارع النيل، القاهرة</div>
+          <div class="muted">© جميع الحقوق محفوظة 2025</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enhanced Booking Modal -->
+  <div id="bookingModal">
+    <div>
+      <h3 style="margin:0 0 24px 0; font-size: 24px; color: var(--navy);">احجز استشارة</h3>
+      <form id="bookingForm">
+        <label style="font-weight: 600; color: var(--navy); margin-bottom: 8px; display: block;">الاسم</label>
+        <input type="text" id="bkName" required>
+        <label style="font-weight: 600; color: var(--navy); margin-bottom: 8px; display: block; margin-top: 20px;">الهاتف</label>
+        <input type="text" id="bkPhone" required>
+        <label style="font-weight: 600; color: var(--navy); margin-bottom: 8px; display: block; margin-top: 20px;">نوع الاستشارة</label>
+        <select id="bkType" style="cursor: pointer;">
+          <option>استشارة جنائية</option>
+          <option>استشارة دولية للشركات</option>
+          <option>تحكيم</option>
+        </select>
+        <div style="margin-top: 24px; display: flex; gap: 16px;">
+          <button class="btn" type="submit" style="flex: 1;">تأكيد الحجز</button>
+          <button type="button" id="closeBooking" class="btn" style="background: transparent; border: 2px solid var(--navy); color: var(--navy); flex: 1;">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Enhanced smooth scroll with easing
+    function smoothScrollTo(target, duration = 1000) {
+      const targetElement = document.querySelector(target);
+      if (!targetElement) return;
+      
+      const targetPosition = targetElement.offsetTop - 80;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function easeInOutCubic(t, b, c, d) {
+        t /= d/2;
+        if (t < 1) return c/2*t*t*t + b;
+        t -= 2;
+        return c/2*(t*t*t + 2) + b;
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    // Enhanced anchor link handling
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        if (target && target !== '#') {
+          smoothScrollTo(target, 800);
+        }
+      });
+    });
+
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Enhanced counter animation with easing
+    const counters = document.querySelectorAll('.num');
+    let counted = false;
+
+    function animateCounters() {
+      if (counted) return;
+      
+      const casesSection = document.getElementById('cases');
+      const rect = casesSection.getBoundingClientRect();
+      
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        counters.forEach(el => {
+          const target = +el.dataset.target;
+          let start = 0;
+          const duration = 2000;
+          const startTime = performance.now();
+
+          function updateCounter(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            
+            // Ease out cubic
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            start = Math.floor(easedProgress * target);
+            
+            el.textContent = start.toLocaleString('ar-EG');
+            
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            }
+          }
+          
+          requestAnimationFrame(updateCounter);
+        });
+        counted = true;
+      }
+    }
+
+    window.addEventListener('scroll', animateCounters, { passive: true });
+
+    // Enhanced testimonials slider with auto-play
+    let curTest = 0;
+    const slides = document.querySelectorAll('.test-slide');
+    let autoPlayInterval;
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      curTest = (curTest + 1) % slides.length;
+      showSlide(curTest);
+    }
+
+    function prevSlide() {
+      curTest = (curTest - 1 + slides.length) % slides.length;
+      showSlide(curTest);
+    }
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+    }
+
+    document.getElementById('nextTest').addEventListener('click', () => {
+      stopAutoPlay();
+      nextSlide();
+      startAutoPlay();
+    });
+
+    document.getElementById('prevTest').addEventListener('click', () => {
+      stopAutoPlay();
+      prevSlide();
+      startAutoPlay();
+    });
+
+    // Start auto-play
+    startAutoPlay();
+
+    // Enhanced FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const question = item.querySelector('h4');
+      const answer = item.querySelector('p');
+      const icon = item.querySelector('span');
+      
+      item.addEventListener('click', () => {
+        const isOpen = answer.style.display === 'block';
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          const otherAnswer = otherItem.querySelector('p');
+          const otherIcon = otherItem.querySelector('span');
+          otherAnswer.style.display = 'none';
+          otherIcon.textContent = '+';
+          otherItem.style.background = 'var(--gradient-card)';
+        });
+        
+        // Toggle current FAQ
+        if (!isOpen) {
+          answer.style.display = 'block';
+          icon.textContent = '−';
+          item.style.background = 'rgba(201, 169, 110, 0.1)';
+        }
+      });
+    });
+
+    // Enhanced modal functionality
+    const bookingModal = document.getElementById('bookingModal');
+    
+    document.getElementById('bookBtn').addEventListener('click', () => {
+      bookingModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    
+    document.getElementById('closeBooking').addEventListener('click', () => {
+      bookingModal.style.display = 'none';
+      document.body.style.overflow = '';
+    });
+    
+    // Close modal on backdrop click
+    bookingModal.addEventListener('click', (e) => {
+      if (e.target === bookingModal) {
+        bookingModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Enhanced form handling
+    document.getElementById('bookingForm').addEventListener('submit', e => {
+      e.preventDefault();
+      
+      // Add loading state
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'جاري الإرسال...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('تم استلام طلب الحجز بنجاح! سنعاود التواصل معك خلال 24 ساعة.');
+        bookingModal.style.display = 'none';
+        document.body.style.overflow = '';
+        document.getElementById('bookingForm').reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 1500);
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'جاري الإرسال...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('تم إرسال رسالتك بنجاح! سنرد عليك في أقرب وقت.');
+        document.getElementById('contactForm').reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 1500);
+    });
+
+    // Header scroll effect
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }, { passive: true });
+
+    // Intersection Observer for enhanced animations
+    const enhancedObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 100);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+      enhancedObserver.observe(card);
+    });
+
+    // Performance optimization: Debounce scroll events
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    // Enhanced scroll handling
+    window.addEventListener('scroll', debounce(() => {
+      animateCounters();
+    }, 10), { passive: true });
+
+    // Add loading animation
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    // Keyboard navigation support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && bookingModal.style.display === 'flex') {
+        bookingModal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</body>
+</html>
